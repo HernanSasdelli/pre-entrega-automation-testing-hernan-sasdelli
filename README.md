@@ -1,38 +1,38 @@
-#####################################  Propósito #############################################
+##Propósito
 Pre-entrega del proyecto (hasta Clase 8): automatizar flujos básicos de **SauceDemo** con **Python + Pytest + Selenium**, validando login, inventario y carrito.
 
-#####################################  Tecnologías #############################################
+##Tecnologías
 - Python 3.12
 - Pytest
 - Selenium WebDriver
 - pytest-html (reporte)
 
-#####################################  Requisitos previos ######################################
+##Requisitos previos
 - Google Chrome instalado
-- .venv
+- venv
 
 
-##################################### Instalación #############################################
+##Instalación 
 -bash
 ##crear/activar venv (Windows)
 python -m venv .venv
 ..venv\Scripts\activate
 
 
-##################################### instalar dependencias ###############################
+##Instalar dependencias
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 
 
-##################################### ejecucion de pruebas ###############################
+##ejecucion de pruebas
 -suite completa con reporte HTML
 pytest -v --html=reports/reporte.html
 
-##################################### Reporte y evidencias ###############################
+##Reporte y evidencias
 El reporte se genera en reports/reporte.html
 Si un test falla, se guarda captura automática en reports/ (lo maneja conftest.py)
 
-##################################### CASOS DE PRUEBA #############################################
+##CASOS DE PRUEBA##
 CP-01
 
 id: CP-01
