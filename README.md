@@ -1,4 +1,5 @@
 ##Propósito
+
 Pre-entrega del proyecto (hasta Clase 8): automatizar flujos básicos de **SauceDemo** con **Python + Pytest + Selenium**, validando login, inventario y carrito.
 
 ##Tecnologías
@@ -13,6 +14,7 @@ Pre-entrega del proyecto (hasta Clase 8): automatizar flujos básicos de **Sauce
 
 
 ##Instalación 
+
 -bash
 ##crear/activar venv (Windows)
 python -m venv .venv
@@ -20,19 +22,23 @@ python -m venv .venv
 
 
 ##Instalar dependencias
+
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 
 
 ##ejecucion de pruebas
+
 -suite completa con reporte HTML
 pytest -v --html=reports/reporte.html
 
 ##Reporte y evidencias
+
 El reporte se genera en reports/reporte.html
 Si un test falla, se guarda captura automática en reports/ (lo maneja conftest.py)
 
 ##CASOS DE PRUEBA##
+
 CP-01
 
 id: CP-01
@@ -102,21 +108,3 @@ severidad: 2
 prioridad: 2
 
 
-SELECTORES A USAR
-usuario: #user-name (XPath: //input[@id='user-name'])
-
-password: #password (XPath: //input[@id='password'])
-
-botón login: #login-button (XPath: //*[@id='login-button' or @data-test='login-button'])
-
-título inventario: .title (XPath: //span[normalize-space()='Products'])
-
-primer Add to cart: [id^="add-to-cart-"] (XPath: //button[contains(@id,'add-to-cart-')])
-
-badge carrito: .shopping_cart_badge (XPath: //span[@class='shopping_cart_badge'])
-
-icono carrito: .shopping_cart_link (XPath: //a[contains(@class,'shopping_cart_link')])
-
-nombre 1er producto: .inventory_item_name (XPath: (//div[contains(@class,'inventory_item_name')])[1])
-
-precio 1er producto: .inventory_item_price (XPath: (//div[contains(@class,'inventory_item_price')])[1])
