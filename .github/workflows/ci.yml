@@ -1,0 +1,51 @@
+name: CI Automation
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run API tests
+        env:
+          REQRES_API_KEY: ${{ secrets.REQRES_API_KEY }}
+        run: |
+          pytest -q -m api --html=reports/api_report.html --self-contained-html
+
+      - name: Run E2E API lifecycle
+        run: |
+          pytest -q -m e2e --html=reports/e2e_report.html --self-contained-html
+
+      - name: Run UI smoke (headless)
+        run: |
+          pytest -q -m smoke --html=reports/ui_report.html --self-contained-html
+
+      - name: Run BDD smoke
+        run: |
+          behave features -t "@smoke"
+
+      - name: Upload reports and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidencias
+          path: |
+            reports/
+            logs/

@@ -16,6 +16,11 @@ LOG_FILE = os.path.join(LOGS_DIR, "suite.log")
 
 @pytest.fixture(scope="function")
 def driver():
+    #para linux(NOTA: ver con el gpt para entenderlo mejor)
+    opts.add_argument("--headless=new")
+    opts.add_argument("--no-sandbox")
+    opts.add_argument("--disable-dev-shm-usage")
+
     os.makedirs(REPORTS_DIR, exist_ok=True)
 
     opts = Options()
