@@ -10,7 +10,7 @@ class InventoryPage:
     _CART_LINK = (By.CSS_SELECTOR, ".shopping_cart_link")
     _CART_BADGE = (By.CSS_SELECTOR, ".shopping_cart_badge")
 
-    # Producto típico para el TP (podés cambiarlo si tu test usa otro)
+    # Producto 
     _ADD_BACKPACK = (By.ID, "add-to-cart-sauce-labs-backpack")
 
     def __init__(self, driver, timeout=10):
@@ -46,6 +46,8 @@ class InventoryPage:
         link.click()
         return self
     
+
+
     def agregar_producto_por_id(self, add_button_id: str):
         locator = (By.ID, add_button_id)
         btn = self.wait.until(EC.element_to_be_clickable(locator))

@@ -17,9 +17,10 @@ def test_carrito(driver):
     inv.agregar_backpack_al_carrito()
     inv.ir_al_carrito()
 
-    WebDriverWait(driver, 10).until(EC.url_contains("/cart.html"))
+   # WebDriverWait(driver, 10).until(EC.url_contains("/cart.html"))
 
-
+    cart = CartPage(driver).esperar_carga()
+    assert "cart.html" in driver.current_url
 
     # CARRITO
     cart = CartPage(driver).esperar_carga()
