@@ -1,0 +1,8 @@
+2025-12-15 22:03:44 [INFO] suite - === INICIO SUITE ===
+2025-12-15 22:04:01 [INFO] suite - === FIN SUITE ===
+2025-12-15 22:04:22 [INFO] suite - === INICIO SUITE ===
+2025-12-15 22:04:24 [INFO] suite - === FIN SUITE ===
+2025-12-15 22:06:08 [INFO] suite - === INICIO SUITE ===
+2025-12-15 22:06:23 [INFO] suite - UI - Inicio test_login_exitoso
+2025-12-15 22:06:36 [INFO] suite - API - GET users page=2
+2025-12-15 22:06:36 [INFO] suite - === FIN SUITE ===
